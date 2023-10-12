@@ -1,10 +1,10 @@
 # php-app-migration
-Based on <https://github.com/jharmison-redhat/php-app-migration> but configured to use the pre-imported VMs in the "vmimported" namespace of the OpenShift Virtualization Roadshow.
+Based on <https://github.com/jharmison-redhat/php-app-migration> configured to use the pre-imported VMs in the 'vmimported' namespace of the OpenShift Virtualization Roadshow.
 
 ## Setup
 In this setup section you will be starting 3 virtual machines on OpenShift Virtualization that run a database and 2 instances of a PHP web application running on IIS on Microsoft Windows servers. You will be creating services to expose them on the internal OpenShift SDN (the web application service will automatically load balance between the two web application instances) as well as a route which exposes the web application service to clients outside the OpenShift cluster.
 
-1. In the OpenShift Console, navigate to "Virtualization > VirtualMachines" and start VMs: database, winweb01, winweb02
+1. In the OpenShift Console, navigate to "Virtualization > VirtualMachines" and start VMs: 'database', 'winweb01', 'winweb02'
 
 1. Clone this git repository
    ```sh
@@ -42,7 +42,7 @@ In this section you will be using OpenShift's Source to Image (S2I) tools to bui
 1.1 When the build completes, navigate to "Workloads > Deployments" and see 'linweb'
 1.1 Finally navigate to "Workloads > Pods" and see 2 pods named 'linweb-XXXXXXXXX-XXXXX' with "Status" 'Running'
 
-1. You can verify the migration by shutting down the winweb01 and winweb02 VMs and refreshing your browser tab you used to view the application and see the visitor number increased as expected and the hostname has changed.
+1. You can verify the migration by shutting down the 'winweb01' and 'winweb02' VMs and refreshing your browser tab you used to view the application and see the visitor number increased as expected and the hostname has changed.
 
 ## Walkthrough
 Review the walkthough in James' original **[README](https://github.com/jharmison-redhat/php-app-migration/blob/main/README.md#basic-walkthrough)** for ideas on how to show the elements being used in the migration as well as how to demonstrate the completed migration.
