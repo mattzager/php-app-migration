@@ -7,7 +7,7 @@ namespace: vmimported
 patches:
 - path: 00-labels-database.yaml
   target:
-    name: virt-launcher-database-*
+    name: virt-launcher-database*
 - path: 00-labels-winweb.yaml
   target:
     name: virt-launcher-winweb*
