@@ -10,6 +10,7 @@ metadata:
           "from": {
             "kind": "ImageStreamTag",
             "name": "linweb:latest",
+            "namespace": "vmimported"
           },
           "fieldPath": "spec.template.spec.containers[?(@.name==\"linweb\")].image",
           "paused": false
