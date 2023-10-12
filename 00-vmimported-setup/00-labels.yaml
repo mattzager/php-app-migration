@@ -1,0 +1,6 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  generateName: virt-launcher-database-
+  labels:
+    app: database
