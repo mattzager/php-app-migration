@@ -5,10 +5,10 @@ kind: Kustomization
 namespace: vmimported
 
 patches:
-- path: 00-labels-database.yaml
+- path: 00-labels-database.json
   target:
     name: virt-launcher-database*
-- path: 00-labels-winweb.yaml
+- path: 00-labels-winweb.json
   target:
     name: virt-launcher-winweb*
 
