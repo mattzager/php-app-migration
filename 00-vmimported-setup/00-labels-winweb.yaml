@@ -1,5 +1,0 @@
-kind: Pod
-apiVersion: v1
-metadata:
-  labels:
-    app: winweb
