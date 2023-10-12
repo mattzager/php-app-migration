@@ -1,0 +1,13 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: vmexamples
+
+resources:
+- 00-imagestream.yaml
+- 01-buildconfig.yaml
+- 02-configmap-php-fpm.yaml
+- 03-deployment.yaml
+- 04-service.yaml
+- 05-route.yaml

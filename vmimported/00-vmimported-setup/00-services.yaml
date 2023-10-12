@@ -5,7 +5,7 @@ metadata:
   name: database
 spec:
   selector:
-    app: database
+    vm.kubevirt.io/name: database
   type: ClusterIP
   ports:
   - name: mysql
@@ -16,10 +16,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: winweb
+  name: webapp
 spec:
   selector:
-    app: winweb
+    env: webapp
   type: ClusterIP
   ports:
   - name: http
