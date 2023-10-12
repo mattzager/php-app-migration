@@ -5,5 +5,5 @@ kind: Kustomization
 namespace: vmimported
 
 resources:
-- 01-services.yaml
-- 02-route.yaml
+- 00-services.yaml
+- 01-route.yaml
