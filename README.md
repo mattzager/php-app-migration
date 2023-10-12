@@ -4,27 +4,34 @@ Based on https://github.com/jharmison-redhat/php-app-migration but configured to
 ## Setup
 1. In the OpenShift Console, navigate to "Virtualization > VirtualMachines" and start VMs: database, winweb01, winweb02
 
-2. In a terminal, ssh to the bastion host, then ssh to the host indicated for CLI access.
-You should be automatically logged in as an admin when you use the oc commands. Ensure you are using the 'vmimported' project.
-```sh
-oc project vmimported
-```
+1. Clone this git repository
+   ```sh
+   git clone https://github.com/mattzager/php-app-migration.git
+   cd php-app-migration
+   ```
 
-3. Next we want to label existing VM pods with app tags, create services for both the database and web servers, and create an external route to access the web application.
-```sh
-oc label pods -l vm.kubevirt.io/name=database app=database
-oc label pods -l vm.kubevirt.io/name=winweb01 app=winweb
-oc label pods -l vm.kubevirt.io/name=winweb02 app=winweb
-oc apply -k 00-vmimported-setup
-```
+1. In a terminal, ssh to the bastion host, then ssh to the host indicated for CLI access.
 
-4. After this step, let's ensure the services and routes are working as expected. In the OpenShift Console, navigate to "Networking > Routes" and click on the route which should open a browser where you can see the PHP application output which reports your visitor number and which host served the web page.
+1. Ensure you are using the 'vmimported' project. (You should be automatically logged in as an admin when you use the oc commands.)
+   ```sh
+   oc project vmimported
+   ```
+
+1. Next we want to label existing VM pods with app tags, create services for both the database and web servers, and create an external route to access the web application.
+   ```sh
+   oc label pods -l vm.kubevirt.io/name=database app=database
+   oc label pods -l vm.kubevirt.io/name=winweb01 app=winweb
+   oc label pods -l vm.kubevirt.io/name=winweb02 app=winweb
+   oc apply -k 00-vmimported-setup
+   ```
+
+4. After this step, let's ensure the services and routes are working as expected. In the OpenShift Console, navigate to "Networking > Routes" (make sure you have selected 'vmimported' in the "Project:" drop down) and click on the route location URL which should open a browser where you can see the PHP application output which reports your visitor number and which host served the web page.
 
 ## Migration
 1. Create a new build to deploy the web application in containers, and update the route to include the containers to enable shutting down of the VMs.
-```sh
-oc apply -k 01-vmimported-migration
-```
-2. 
+   ```sh
+   oc apply -k 01-vmimported-migration
+   ```
+   
 ## Walkthrough
 1. TODO
