@@ -38,9 +38,9 @@ In this section you will be using OpenShift's Source to Image (S2I) tools to bui
    ```
    
 1. After this step you can observe the following
-1.1 In the OpenShift Console, navigate to "Builds > Builds" and see a build 'linweb-#'
-1.1 When the build completes, navigate to "Workloads > Deployments" and see 'linweb'
-1.1 Finally navigate to "Workloads > Pods" and see 2 pods named 'linweb-XXXXXXXXX-XXXXX' with "Status" 'Running'
+   1. In the OpenShift Console, navigate to "Builds > Builds" and see a build 'linweb-#'
+   1. When the build completes, navigate to "Workloads > Deployments" and see 'linweb'
+   1. Finally navigate to "Workloads > Pods" and see 2 pods named 'linweb-XXXXXXXXX-XXXXX' with "Status" 'Running'
 
 1. You can verify the migration by shutting down the 'winweb01' and 'winweb02' VMs and refreshing your browser tab you used to view the application and see the visitor number increased as expected and the hostname has changed.
 
