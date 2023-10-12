@@ -8,11 +8,11 @@ patches:
 - path: 00-labels-database.json
   target:
     kind: Pod
-    name: virt-launcher-database*
+    name: virt-launcher-database.*
 - path: 00-labels-winweb.json
   target:
     kind: Pod
-    name: virt-launcher-winweb*
+    name: virt-launcher-winweb.*
 
 resources:
 - 01-services.yaml
