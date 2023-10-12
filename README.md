@@ -30,7 +30,7 @@ In this setup section you will be starting 3 virtual machines on OpenShift Virtu
 4. After this step, let's ensure the services and routes are working as expected. In the OpenShift Console, navigate to "Networking > Routes" (select 'vmimported' in the "Project:" drop down) and click on the route location URL which should open a browser where you can see the PHP application output which reports your visitor number and which host served the web page.
 
 ## Migration
-In this section you will be using OpenShift's Source to Image (S2I) tools to build a new container image from the original PHP application code, store that image in OpenShift's container registry, deploy 2 instances of the container native version of the application, create a service to expose and load balance between those 2 instances and add that service to the existing route to be able to replace the legacy VM services when they are shut down. The new container base web applications will continue to use the VM based database.
+In this section you will be using OpenShift's Source to Image (S2I) tools to build a new container image from the original PHP application code, store that image in OpenShift's container registry, deploy 2 instances of the container native version of the application, create a service to expose and load balance between those 2 instances and add that service to the existing route to be able to replace the legacy VM services when they are shut down. The new container based web applications will continue to use the VM based database.
 
 1. Create a new build to deploy the web application in containers, and update the route to include the new containers service.
    ```sh
