@@ -4,7 +4,9 @@ kind: Kustomization
 
 namespace: vmimported
 
-resources:
+patchesStrategicMerge:
 - 00-labels.yaml
+
+resources:
 - 01-services.yaml
 - 02-route.yaml
