@@ -6,13 +6,13 @@ In this setup section you will be starting 3 virtual machines on OpenShift Virtu
 
 1. In the OpenShift Console, navigate to "Virtualization > VirtualMachines" and start VMs: 'database', 'winweb01', 'winweb02'
 
+1. In a terminal, ssh to the bastion host, then ssh to the host indicated for CLI access in your RHDP environment.
+
 1. Clone this git repository
    ```sh
    git clone https://github.com/mattzager/php-app-migration.git
    cd php-app-migration/vmimported
    ```
-
-1. In a terminal, ssh to the bastion host, then ssh to the host indicated for CLI access.
 
 1. Ensure you are using the 'vmimported' project. (You should be automatically logged in as an admin when you use the oc commands.)
    ```sh
