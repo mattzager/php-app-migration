@@ -7,9 +7,22 @@ The setup for this demo is done as part of completing the "Migrating Virtual Mac
 ## Migration
 In this section you will be using OpenShift's Source to Image (S2I) tools to build a new container image from the original PHP application code, store that image in OpenShift's container registry, deploy 2 instances of the container native version of the application, create a service to expose and load balance between those 2 instances and add that service to the existing route to be able to replace the legacy VM services when they are shut down. The new container based web applications will continue to use the VM based database.
 
+1. In a terminal, ssh to the bastion host, then ssh to the host indicated for CLI access in your RHDP environment.
+
+1. Clone this git repository
+   ```sh
+   git clone https://github.com/mattzager/php-app-migration.git
+   cd php-app-migration/vmexamples
+   ```
+
+1. Ensure you are using the 'vmexamples' project. (You should be automatically logged in as an admin when you use the oc commands.)
+   ```sh
+   oc project vmexamples
+   ```
+
 1. Create a new build to deploy the web application in containers, and update the route to include the new containers service.
    ```sh
-   oc apply -k 01-vmimported-migration
+   oc apply -k 01-vmexamples-migration
    ```
    
 1. After this step you can observe the following
